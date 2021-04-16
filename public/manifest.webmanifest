@@ -1,8 +1,11 @@
 {
+   
+    
     "name": "Budgetary",
     "short_name": "Bdgtry",
     "theme_color":"#12191c",
     "background_color": "#6f7f8d",
     "start_url": "/",
     "display": "standalone"
+    
 }  
