@@ -39,7 +39,7 @@ self.addEventListener("fetch", function (event) {
                     .then(response => {
                         // If the response was good, clone it and store it in the cache.
                         if (response.status === 200) {
-                            cache.put(evt.request.url, response.clone());
+                            cache.put(event.request.url, response.clone());
                         }
                         return response;
                     })
