@@ -1,7 +1,7 @@
 const FILES_TO_CACHE = ["/", "index.html", "index.js", "serviceworker.js", "manifest.webmanifest", "styles.css"];
 
-const CACHE_NAME = "standard-cache-v1";
-const DATA_CACHE_NAME = "cached-data-v1";
+const CACHE_NAME = "standard-cache-v2";
+const DATA_CACHE_NAME = "cached-data-v2";
 
 self.addEventListener("install", function (event) {
     event.waitUntil(

@@ -4,7 +4,12 @@ body {
   background-image: url("./images/background.jpg");
 background-size: cover;
 background-blend-mode: overlay;
+}
 
+.h1{
+  font-family: 'Arima Madurai', 'sans-serif';
+  font-size: 105%;
+  color:#eb0028;
 }
 
 button, input {
