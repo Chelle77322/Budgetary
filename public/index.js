@@ -72,7 +72,7 @@ function populateChart() {
         datasets: [{
             label: "Total Over Time",
             fill: true,
-            backgroundColor: createLinearGradient(0,0,canvas.width,0).addColorStop(0, 'grey').addColorStop(1, 'blue'),
+            backgroundColor:'#e0d86e',
             data
         }]
     }
