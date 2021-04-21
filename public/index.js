@@ -1,6 +1,7 @@
 let transactions = [];
 let myChart;
 
+//When the page loads it should fetch all existing transactions
 fetch("/api/transaction")
   .then(response => {
     return response.json();
@@ -15,7 +16,7 @@ fetch("/api/transaction")
   });
 
 function populateTotal() {
-  // reduce transaction amounts to a single total value
+  // reduce transaction amounts to a single total value using parseInt
   let total = transactions.reduce((total, t) => {
     return total + parseInt(t.value);
   }, 0);
@@ -71,7 +72,7 @@ function populateChart() {
         datasets: [{
             label: "Total Over Time",
             fill: true,
-            backgroundColor: "#6666ff",
+            backgroundColor: createLinearGradient(0,0,canvas.width,0).addColorStop(0, 'grey').addColorStop(1, 'blue'),
             data
         }]
     }
