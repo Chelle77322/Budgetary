@@ -65,14 +65,14 @@ function populateChart() {
 
   let ctx = document.getElementById("myChart").getContext("2d");
 
-  myChart = new Chart(ctx, {
+ myChart = new Chart(ctx, {
     type: 'line',
       data: {
         labels,
         datasets: [{
             label: "Total Over Time",
             fill: true,
-            backgroundColor: createLinearGradient(0,0,canvas.width,0).addColorStop(0, 'grey').addColorStop(1, 'blue'),
+            backgroundColor: "#ffee99",
             data
         }]
     }
