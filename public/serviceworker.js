@@ -1,16 +1,32 @@
-const FILES_TO_CACHE = ["/", "index.html", "index.js", "serviceworker.js", "manifest.webmanifest", "styles.css"];
+const CACHE_NAME = "standard-cache-v4";
+const DATA_CACHE_NAME = "cached-data-v4";
+const FILES_TO_CACHE = [
+    "/", 
+    "/index.html", 
+    "/index.js", 
+    "/serviceworker.js",
+    "/manifest.webmanifest",
+     "/styles.css",
+    "/models/transaction.js",
+    "/routes/api.js", 
+    "/server.js", 
+    "/images/background.jpg"
+];
 
-const CACHE_NAME = "standard-cache-v2";
-const DATA_CACHE_NAME = "cached-data-v2";
+//Installation of cache
 
 self.addEventListener("install", function (event) {
     event.waitUntil(
-        caches.open(CACHE_NAME).then(cache => {
+        caches.open(DATA_CACHE_NAME).then(cache => {
             console.log("Your files were pre-cached successfully!");
             return cache.addAll(FILES_TO_CACHE);
         })
     );
-
+    //Getting all static cache files
+    event.waitUntil(
+        caches.open(CACHE_NAME).then((cache) => cache.addAll(FILES_TO_CACHE))
+    );
+//Tells the browser to activate this service worker after installation
     self.skipWaiting();
 });
 

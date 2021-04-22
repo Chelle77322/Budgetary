@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const compression = require("compression");
 
 const PORT = process.env.PORT ||4040;
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/budgetary";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/Budgetary";
 
 const app = express();
 
@@ -16,9 +16,9 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect(MONGODB_URI, {
+mongoose.connect(MONGODB_URI , {
   useNewUrlParser: true,
-  useFindAndModify: false
+  useFindAndModify: true
 });
 
 // routes
