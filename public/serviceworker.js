@@ -1,7 +1,7 @@
 const PREFIX_APP = 'Budgetary';
 const APP_VERSION = 'version_01';
-const CACHE_NAME = "standard-cache-v11";
-const DATA_CACHE_NAME = "cached-data-v11";
+const CACHE_NAME = "standard-cache-v15";
+const DATA_CACHE_NAME = "cached-data-v15";
 const FILES_TO_CACHE = [
     
     "./favicon.ico",
