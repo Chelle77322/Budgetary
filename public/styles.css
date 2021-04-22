@@ -8,17 +8,29 @@ background-blend-mode: overlay;
 
 .h1{
   font-family: 'Arima Madurai', 'sans-serif';
-  font-size: 105%;
+  font-size: 250%;
   color:#eb0028;
+  transform: translate(0, 0);
+    -moz-box-shadow: 2px 2px 4px rgba(34, 34, 32, 0.5);
+    -webkit-box-shadow: 2px 2px 4px rgba(25, 5, 58, 0.5);
+    box-shadow: 2px 2px 4px rgba(175,173,173,.5);
 }
 
 button, input {
   font-size: 85%;
   font-family:'Glegoo', 'sans-serif';
+  transform: translate(0, 0);
+    -moz-box-shadow: 2px 2px 4px rgba(34, 34, 32, 0.5);
+    -webkit-box-shadow: 2px 2px 4px rgba(25, 5, 58, 0.5);
+    box-shadow: 2px 2px 4px rgba(175,173,173,.5);
 }
 
 table {
   width: 100%;
+  transform: translate(0, 0);
+    -moz-box-shadow: 5px 7px 9px rgba(34, 34, 32, 0.5);
+    -webkit-box-shadow: 5px 7px 9px rgba(25, 5, 58, 0.5);
+    box-shadow: 5px 7px 9px rgba(175, 173, 173, 0.5);
  
 }
 
@@ -27,6 +39,7 @@ td, th {
   text-align: left;
   padding: 8px;
   background-color:linear-gradient(bottom,#a8bae9, #007ea3);
+
 }
 
 tr:nth-child(even) {
@@ -47,7 +60,7 @@ tr:nth-child(even) {
 
 
 .total {
-  font-size: 100%;
+  font-size: 150%;
   text-decoration: underline;
 }
 
