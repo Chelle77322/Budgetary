@@ -9,7 +9,8 @@ background-blend-mode: overlay;
 .h1{
   font-family: 'Arima Madurai', 'sans-serif';
   font-size: 250%;
-  color:#12191c;;
+  color:#12191c;
+  
   
   transform: translate(0, 0);
     -moz-box-shadow: 4px 4px 6px rgba(34, 34, 32, 0.5);

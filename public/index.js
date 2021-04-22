@@ -63,7 +63,7 @@ function populateChart() {
     myChart.destroy();
   }
 
-  let ctx = document.getElementById("myChart").getContext("2d");
+  let ctx = document.getElementById("myChart").getContext("3d");
 
   myChart = new Chart(ctx, {
     type: 'line',
@@ -82,7 +82,7 @@ function populateChart() {
 function sendTransaction(isAdding) {
   let nameEl = document.querySelector("#t-name");
   let amountEl = document.querySelector("#t-amount");
-  let errorEl = document.querySelector(".form .error");
+  let errorEl = document.querySelector(".form.error");
 
   // validate form
   if (nameEl.value === "" || amountEl.value === "") {
