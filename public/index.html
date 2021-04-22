@@ -21,6 +21,13 @@
   <title>Budgetary: A budget app for the person on the go</title>
 </head>
 <body>
+  <script>
+    const request = window.indexedDB.open("Budgetary", 1);
+
+    request.onsuccess = event => {
+      console.log(request.result.name);
+    };
+  </script>
   <div class="wrapper">
     <header><h1 class = "h1">Budgetary</h1></header>
     <div class="total">
