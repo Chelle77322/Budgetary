@@ -49,7 +49,7 @@ td, th {
 }
 
 tr:nth-child(even) {
-  background-color:#d3601e;
+  background-color:#174ab8;
 }
 
 .error {
