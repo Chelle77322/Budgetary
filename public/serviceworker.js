@@ -20,7 +20,7 @@ const FILES_TO_CACHE = [
 self.addEventListener("install", function(event){
 
     event.waitUntil(
-        caches.open(DATA_CACHE_NAME).then((cache)=> cache.add("/"))
+        caches.open(DATA_CACHE_NAME).then((cache)=> cache.add("/api/transaction"))
     );
     //Getting all static cache files
     event.waitUntil(

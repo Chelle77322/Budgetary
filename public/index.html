@@ -55,11 +55,12 @@
   <script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {
-        navigator.serviceWorker.register("serviceworker.js").then(reg => {
+        navigator.serviceWorker.register('static/serviceworker.js', {scope: '/'}).then(reg => {
           console.log("We found your service worker file!", reg);
         });
       });
     }
+   
   </script>
 </body>
 </html>
