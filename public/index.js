@@ -72,7 +72,7 @@ function populateChart() {
         datasets: [{
             label: "Total Over Time",
             fill: true,
-            backgroundColor:'#99721f',
+            backgroundColor:'#12191c',
             data
         }]
     }
@@ -135,7 +135,7 @@ function sendTransaction(isAdding) {
       amountEl.value = "";
     }
   })
-  .catch(err => {
+  .catch(error => {
     // fetch failed, so save in indexed db
     saveRecord(transaction);
 

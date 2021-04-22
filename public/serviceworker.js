@@ -8,8 +8,8 @@ const FILES_TO_CACHE = [
     "/serviceworker.js",
     "/manifest.webmanifest",
      "/styles.css",
-    "/models/transaction.js",
-    "/routes/api.js", 
+    "./models/transaction.js",
+    "./routes/api.js", 
     "server.js", 
     "/images/background.jpg",
     "/icons/icons-192x192.png",
@@ -17,22 +17,20 @@ const FILES_TO_CACHE = [
 ];
 
 //Installation of cache
+self.addEventListener("install", function(event){
 
-self.addEventListener("install", function (event) {
     event.waitUntil(
-        caches.open(DATA_CACHE_NAME).then(cache => {
-            console.log("Your files were pre-cached successfully!");
-            return cache.addAll(FILES_TO_CACHE);
-        })
+        caches.open(DATA_CACHE_NAME).then((cache)=> cache.add("/"))
     );
     //Getting all static cache files
     event.waitUntil(
         caches.open(CACHE_NAME).then((cache) => cache.addAll(FILES_TO_CACHE))
     );
-//Tells the browser to activate this service worker after installation
+    //Tells the browser to activate this service worker after installation
     self.skipWaiting();
 });
-
+    
+//Section activates 
 self.addEventListener("activate", function (event) {
     event.waitUntil(
         caches.keys().then(keyList => {
