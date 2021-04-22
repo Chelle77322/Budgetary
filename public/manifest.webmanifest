@@ -15,7 +15,7 @@
     "name": "Budgetary",
     "short_name": "Bdgtry",
     "theme_color":"#12191c",
-    "background_color":"linear-gradient(bottom,#a8bae9, #007ea3",
+    "background_color":"#007ea3",
     "start_url": "/",
     "display": "standalone"
     
