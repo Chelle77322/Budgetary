@@ -1,5 +1,5 @@
-const CACHE_NAME = "standard-cache-v5";
-const DATA_CACHE_NAME = "cached-data-v5";
+const CACHE_NAME = "standard-cache-v11";
+const DATA_CACHE_NAME = "cached-data-v11";
 const FILES_TO_CACHE = [
     "/", 
     "/favicon.ico",
