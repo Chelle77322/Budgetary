@@ -65,29 +65,29 @@ self.addEventListener('fetch', function(event){
     )
 })
 //Might be useful
-//self.addEventListener("fetch", function (event) {
-  //  if (event.request.url.includes("/api/")) {
-//event.respondWith(
-  //  caches.open(DATA_CACHE_NAME).then(cache => {
-    //    return fetch(event.request).then(response => {
+self.addEventListener("fetch", function (event) {
+    if (event.request.url.includes("/api/")) {
+event.respondWith(
+   caches.open(DATA_CACHE_NAME).then(cache => {
+        return fetch(event.request).then(response => {
 // If the response was good, clone it and store it in the cache.
-         ///if (response.status === 200)
-          //{ cache.put(event.request.url,response.clone());
-         //} 
-        //return response;
-//}).catch(error => {
+         if (response.status === 200)
+          { cache.put(event.request.url,response.clone());
+        } 
+        return response;
+}).catch(error => {
 // Network request failed, try to get it from the cache.
- //return cache.match(event.request);
-//});
-// }).catch(error => console.log(error))
- //);
-//return;
-    //}
-    //event.respondWith(
-       // caches.open(CACHE_NAME).then(cache => {
-           // return cache.match(event.request).then(response => {
-               // return response || fetch(event.request);
-           // });
-        //})
-    //);
-//});
+ return cache.match(event.request);
+});
+}).catch(error => console.log(error))
+ );
+return;
+    }
+    event.respondWith(
+        caches.open(CACHE_NAME).then(cache => {
+            return cache.match(event.request).then(response => {
+                return response || fetch(event.request);
+            });
+        })
+    );
+});
