@@ -24,14 +24,14 @@ event.waitUntil(
 )
 })
 //Commenting out as may not be needed
-//self.addEventListener('activate', function(event){
+self.addEventListener('activate', function(event){
     //Getting all static cache files
-  //  event.waitUntil(
-    //    caches.open(DATA_CACHE_NAME).then((cache) => cache.addAll(FILES_TO_CACHE))
-    //);
+    event.waitUntil(
+       caches.open(DATA_CACHE_NAME).then((cache) => cache.addAll(FILES_TO_CACHE))
+    );
     //Tells the browser to activate this service worker after installation
-    //self.skipWaiting();
-//});
+    self.skipWaiting();
+  });
     
 //Section activates 
 self.addEventListener("activate", function (event) {

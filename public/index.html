@@ -22,7 +22,7 @@
 </head>
 <body>
   <script>
-    const request = window.indexedDB.open("Budgetary", 1);
+    const request = window.indexedDB.open("Budgetary", 3);
 
     request.onsuccess = event => {
       console.log(request.result.name);
@@ -63,8 +63,9 @@
   <script>
     if ("serviceWorker" in navigator) {
       window.addEventListener("load", () => {
-        navigator.serviceWorker.register('serviceworker.js', {scope: '/'}).then(reg => {
-          console.log("We found your service worker file!", reg);
+        navigator.serviceWorker.register('serviceworker.js', {scope: '/'}).then(register => {
+          console.log("We found your service worker file!", register);
+          console.log(navigator);
         });
       });
     }
