@@ -74,8 +74,8 @@ function populateChart() {
             fill: false,
             backgroundColor:'#12191c',
             data,
-            color: '#12191c',
-        }],
+           
+        }]
     }
   });
 }
@@ -87,7 +87,7 @@ function sendTransaction(isAdding) {
 
   // validate form
   if (nameEl.value === "" || amountEl.value === "") {
-    errorEl.textContent = "Missing Information";
+    errorEl.textContent = "Required information is missing";
     return;
   }
   else {
@@ -128,7 +128,7 @@ function sendTransaction(isAdding) {
   })
   .then(data => {
     if (data.errors) {
-      errorEl.textContent = "Missing Information";
+      errorEl.textContent = "Required information is missingd";
     }
     else {
       // clear form
