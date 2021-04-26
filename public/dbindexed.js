@@ -1,5 +1,3 @@
-const { ServerResponse } = require("node:http");
-
 let db;
 //connects to the indexed db
 const request = indexedDB.open('Budgetary',1);
