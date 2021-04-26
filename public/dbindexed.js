@@ -1,7 +1,8 @@
-let db;
+var db;
 //connects to the indexed db
 const request = indexedDB.open('Budgetary',1);
-
+console.log(db);
+console.log(request);
 //Now create the object store to store files in
 request.onupgradeneeded = function(event){
     const db = event.target.result;
