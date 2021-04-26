@@ -5,7 +5,7 @@ const request = indexedDB.open('Budgetary',1);
 //Now create the object store to store files in
 request.onupgradeneeded = function(event){
     const db = event.target.result;
-    db.createObjectStore('new_transaction', {
+    db.createObjectStore('new_transactions', {
         autoIncrement: true });
 };
 
@@ -22,14 +22,14 @@ request.onerror = function(event){
 };
 //Saves the transaction to indexedDB
 function saveRecord(record){
-    const transaction = db.transaction(['new_transaction'], 'readwrite');
-const transObjectStore = transaction.objectStore('new_transaction');
+    const transactions = db.transactions(['new_transactions'], 'readwrite');
+const transObjectStore = transactions.objectStore('new_transactions');
 transObjectStore.add(record);
 }
 //Uploads indexEB data to the mongodb server when you have internet
 function uploadTransaction(){
-    const transaction = db.transaction(['new_transaction'], 'readwrite');
-    const transObjectStore = transaction.objectStore('new_transaction');
+    const transactions = db.transactions(['new_transactions'], 'readwrite');
+    const transObjectStore = transactions.objectStore('new_transactions');
     const getAll = transObjectStore.getAll();
 }
 //IF successful; the results property will hold all the data
@@ -46,8 +46,8 @@ getAll.onsuccess = function() {
             if(ServerResponse.message){
                 throw new Error(ServerResponse);
             }
-            const transaction = db.transaction(['new_transaction'],'readwrite');
-            const transObjectStore = transaction.objectStore('new_transaction');
+            const transactions = db.transactions(['new_transactions'],'readwrite');
+            const transObjectStore = transactions.objectStore('new_transactions');
             transObjectStore.clear();
             alert('All offline transactions have been submitted to Budgetary');
         }).catch((error)=>{
