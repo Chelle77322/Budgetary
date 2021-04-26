@@ -13,11 +13,12 @@ request.onupgradeneeded = function(event){
 //Store reference in global db after connection is made
 request.onsuccess = function(event){
     db = event.target.result;
-}
+
 //Check if the app is either online or offline and upload saved to global db transactions
 if(navigator.onLine){
     uploadTransaction();
 }
+};
 request.onerror = function(event){
     console.log(event.target.errorCode);
 };
