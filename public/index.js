@@ -71,23 +71,22 @@ function populateChart() {
         labels,
         datasets: [{
             label: "Total Over Time",
-            fill: false,
+            fill: true,
             backgroundColor:'#12191c',
-            data,
-           
+            data
         }]
     }
   });
 }
 
 function sendTransaction(isAdding) {
-  var nameEl = document.querySelector("#t-name");
-  var amountEl = document.querySelector("#t-amount");
-  var errorEl = document.querySelector(".form.error");
+  let nameEl = document.querySelector("#t-name");
+  let amountEl = document.querySelector("#t-amount");
+  let errorEl = document.querySelector(".form.error");
 
   // validate form
   if (nameEl.value === "" || amountEl.value === "") {
-    errorEl.textContent = "Required information is missing";
+    errorEl.textContent = "Missing Information";
     return;
   }
   else {
@@ -128,7 +127,7 @@ function sendTransaction(isAdding) {
   })
   .then(data => {
     if (data.errors) {
-      errorEl.textContent = "Required information is missingd";
+      errorEl.textContent = "Missing Information";
     }
     else {
       // clear form
