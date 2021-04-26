@@ -28,8 +28,9 @@ event.waitUntil(
 self.addEventListener('activate', function(event){
     //Getting all static cache files
     event.waitUntil(
-       caches.open(DATA_CACHE_NAME).then((cache) => cache.addAll(FILES_TO_CACHE))
+       caches.open(CACHE_NAME).then((cache) => cache.addAll(FILES_TO_CACHE))
     );
+    console.log(caches.open(CACHE_NAME));
     //Tells the browser to activate this service worker after installation
     self.skipWaiting();
   });
