@@ -12,7 +12,8 @@ request.onupgradeneeded = function(event){
 
 //Store reference in global db after connection is made
 request.onsuccess = function(event){
-    db = event.target.result;
+    db = request.result;
+    console.log("Database opened successfully:" + db );
 
 //Check if the app is either online or offline and upload saved to global db transactions
 if(navigator.onLine){
