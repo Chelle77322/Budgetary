@@ -2,11 +2,9 @@ let transactions = [];
 let myChart;
 
 //When the page loads it should fetch all existing transactions
-fetch("/api/transaction")
-  .then(response => {
+fetch("/api/transaction").then(response => {
     return response.json();
-  })
-  .then(data => {
+  }).then(data => {
     // save db data on global variable
     transactions = data;
 
@@ -30,7 +28,7 @@ function populateTable() {
   tbody.innerHTML = "";
 
   transactions.forEach(transaction => {
-    // create and populate a table row
+    // create and populate a table row for every transaction
     let tr = document.createElement("tr");
     tr.innerHTML = `
       <td>${transaction.name}</td>

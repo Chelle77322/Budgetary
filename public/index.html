@@ -52,15 +52,17 @@
 
   <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
   <script src="index.js"></script>
+  <!--Calls the indexedDB file-->
+  <script src = "dbindexed.js"></script>
   <!--Add Service Worker Registration-->
   <script>
+    (function(){
     if ("serviceWorker" in navigator) {
-      window.addEventListener("load", () => {
-        navigator.serviceWorker.register('serviceworker.js', {scope: '/'}).then(reg => {
-          console.log("We found your service worker file!", reg);
-        });
-      });
+      navigator.serviceWorker.register("/serviceworker.js").then(() =>
+      console.log("Service Worker has been registered successfully")).catch(error => console.log("The registration of Service Worker failed:" + error));
     }
+  })
+  ();
    
   </script>
 </body>
