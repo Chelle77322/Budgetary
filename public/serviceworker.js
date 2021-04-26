@@ -3,15 +3,15 @@ const APP_VERSION = "version_01";
 const CACHE_NAME = "standard-cache-v35";
 
 const FILES_TO_CACHE = [
-    "./index.html", 
-    "./index.js", 
-    "./serviceworker.js",
-    "./manifest.webmanifest",
-     "./styles.css",
-    "./dbindexed.js",
-    "./images/background.jpg",
-    "./icons/icon-192x192.png",
-    ".icons/icon-512x512.png"
+    "/index.html", 
+    "/index.js", 
+    "/serviceworker.js",
+    "/manifest.webmanifest",
+     "/styles.css",
+    "/dbindexed.js",
+    "/images/background.jpg",
+    "/icons/icon-192x192.png",
+    "/icons/icon-512x512.png"
 
 ];
 
@@ -48,7 +48,8 @@ self.addEventListener('fetch', function(event){
                 console.log('Cache response is:' + event.request.url)
                 return request
             } else{
-                
+                console.log('This file is not cached:' + event.request.url)
+                return fetch(event.request)
             }
         })
     )
