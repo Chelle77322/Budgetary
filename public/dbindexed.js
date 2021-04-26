@@ -1,13 +1,13 @@
-var db;
+let db;
 //connects to the indexed db
 const request = indexedDB.open('Budgetary',1);
-console.log(db);
-console.log(request);
+
 //Now create the object store to store files in
 request.onupgradeneeded = function(event){
     const db = event.target.result;
     db.createObjectStore('new_transactions', {
         autoIncrement: true });
+        console.log(db);
 };
 
 //Store reference in global db after connection is made
