@@ -1,5 +1,5 @@
-const PREFIX_APP = 'Budgetary';
-const APP_VERSION = 'version_01';
+//const PREFIX_APP = 'Budgetary';
+//const APP_VERSION = 'version_01';
 const CACHE_NAME = "standard-cache-v19";
 const DATA_CACHE_NAME = "cached-data-v19";
 const FILES_TO_CACHE = [
