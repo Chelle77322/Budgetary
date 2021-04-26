@@ -21,7 +21,7 @@ if(navigator.onLine){
 }
 };
 request.onerror = function(event){
-    console.log(event.target.errorCode);
+    console.log(event.target.errorCode);//shows up as undefined
 };
 //Saves the transaction to indexedDB
 function saveRecord(record){
@@ -34,7 +34,7 @@ function uploadTransaction(){
     const transactions = db.transactions(['new_transactions'], 'readwrite');
     const transObjectStore = transactions.objectStore('new_transactions');
     const getAll = transObjectStore.getAll();
-}
+
 //IF successful; the results property will hold all the data
 getAll.onsuccess = function() {
     if(getAll.result.length > 0 ){
@@ -57,5 +57,6 @@ getAll.onsuccess = function() {
             console.log(error);
         });
     }
+}
 }
 window.addEventListener('online', uploadTransaction);
