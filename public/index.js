@@ -21,6 +21,7 @@ function populateTotal() {
 
   let totalEl = document.querySelector("#total");
   totalEl.textContent = total;
+  console.log(totalEl);
 }
 
 function populateTable() {
@@ -70,7 +71,7 @@ function populateChart() {
         datasets: [{
             label: "Total Over Time",
             fill: true,
-            backgroundColor:'#12191c',
+            backgroundColor:"#12191c",
             data
         }]
     }
@@ -80,7 +81,7 @@ function populateChart() {
 function sendTransaction(isAdding) {
   let nameEl = document.querySelector("#t-name");
   let amountEl = document.querySelector("#t-amount");
-  let errorEl = document.querySelector(".form.error");
+  let errorEl = document.querySelector(".form .error");
 
   // validate form
   if (nameEl.value === "" || amountEl.value === "") {
